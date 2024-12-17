@@ -18,7 +18,7 @@ final class CharactersUseCase: CharactersUseCaseProtocol {
 }
 
 
-
+// Mock
 final class CharactersUseCaseMock: CharactersUseCaseProtocol {
     var repo: CharacterRepositoryProtocol
     

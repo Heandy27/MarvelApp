@@ -24,4 +24,7 @@ final class CharacterDetailViewModel {
         seriesData = data
     }
     
+    func getSeriesMock(id: Int) async -> Int {
+        return 1
+    }
 }

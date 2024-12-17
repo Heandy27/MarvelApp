@@ -20,7 +20,7 @@ final class CharacterRepositoryMock: CharacterRepositoryProtocol {
     
     private var network: CharactersNetworkProtocol
     
-    init(network: CharactersNetworkProtocol = CharactersNetwork()) {
+    init(network: CharactersNetworkProtocol = CharacterNetworkMock()) {
         self.network = network
     }
     

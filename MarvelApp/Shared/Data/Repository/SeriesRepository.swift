@@ -21,7 +21,7 @@ final class SeriesRepositoryMock: SeriesRepositoryProtocol {
     
     private var network: SeriesNetworkProtocol
     
-    init(network: SeriesNetworkProtocol = SeriesNetwork()) {
+    init(network: SeriesNetworkProtocol = SeriesNetworkMock()) {
         self.network = network
     }
     
