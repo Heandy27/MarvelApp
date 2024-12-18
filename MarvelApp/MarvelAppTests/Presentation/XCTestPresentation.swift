@@ -110,6 +110,37 @@ final class XCTestPresentation: XCTestCase {
         @State var singleSeriesView = SingleSeriesView(singleSeriesData: ResultSeries(id: 01, title: "Captain America", description: "From German", thumbnail: ThumbnailSeries(path: "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/514a2ed3302f5", fileExtension: ".jpg")))
         
         XCTAssertNotNil(singleSeriesView)
+        
+        let sut = SingleSeriesView(singleSeriesData: ResultSeries(id: 01, title: "Captain America", description: "From German", thumbnail: ThumbnailSeries(path: "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/514a2ed3302f5", fileExtension: ".jpg")))
+        
+        let vStack = try sut.inspect().implicitAnyView().vStack()
+        XCTAssertEqual(vStack.count, 2)
+        
+        let vStack2 = try vStack.vStack(1)
+        XCTAssertEqual(vStack2.count, 2)
+        
+        let titleText = try vStack2.text(0).string()
+        XCTAssertEqual(titleText, singleSeriesView.singleSeriesData.title)
+        
+        let descriptionText = try vStack2.text(1).string()
+        XCTAssertEqual(descriptionText, singleSeriesView.singleSeriesData.description)
+    }
+    
+    // HomeListViewCell
+    
+    func testHomeListViewCell() throws {
+        @State var homelistViewCell = HomeListViewCell(characterData: Results(id: 1, name: "3-D Man", description: "", thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", fileExtension: "jpg")))
+        XCTAssertNotNil(homelistViewCell)
+        
+        let sut = HomeListViewCell(characterData: Results(id: 1, name: "3-D Man", description: "", thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", fileExtension: "jpg")))
+        
+        let vStack = try sut.inspect().implicitAnyView().vStack()
+        XCTAssertEqual(vStack.count, 2)
+        
+        let characterNameText = try vStack.text(1).string()
+        XCTAssertEqual(characterNameText, homelistViewCell.characterData.name)
+        
+        
     }
     
     

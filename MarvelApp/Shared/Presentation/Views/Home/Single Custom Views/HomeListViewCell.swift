@@ -18,14 +18,14 @@ struct HomeListViewCell: View {
                     .frame(width: 150, height: 150)
                     .aspectRatio(contentMode: .fit)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                   
+                
             } placeholder: {
                 ProgressView()
                     .frame(width: 150, height: 100)
             }
             
             
-                Text(characterData.name)
+            Text(characterData.name)
                 .padding(.vertical, 5)
                 .foregroundStyle(.black)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -39,5 +39,5 @@ struct HomeListViewCell: View {
 
 #Preview {
     HomeListViewCell(characterData: Results(id: 1, name: "Andy", description: "Del Ecuador", thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", fileExtension: "jpg")))
-        
+    
 }
