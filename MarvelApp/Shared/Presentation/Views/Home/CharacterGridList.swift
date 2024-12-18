@@ -32,6 +32,8 @@ struct CharacterGridList: View {
                         } label: {
                                 HomeListViewCell(characterData: character)
                         }
+                        
+                        
                     }
                     
                     
@@ -40,7 +42,7 @@ struct CharacterGridList: View {
             }
             .searchable(text: $viewModel.searchText, prompt: "Search Character")
             .navigationTitle("Marvel Characters")
-            
+            .id(1)
                 
             
         }

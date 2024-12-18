@@ -6,6 +6,9 @@
 //
 
 import XCTest
+import SwiftUI
+import ViewInspector
+
 @testable import MarvelApp
 
 final class XCTestPresentation: XCTestCase {
@@ -65,6 +68,52 @@ final class XCTestPresentation: XCTestCase {
 //    }
     
     // MARK: - Presentation UI
+    // CharacterGridList UI
+    func testCharacterGridList() throws {
+        @State var appStateVM = AppStateVM(characterUseCase: CharactersUseCaseMock())
+        XCTAssertNotNil(appStateVM)
+        
+        // Instancio la vista
+       let sut = CharacterGridList(viewModel: HomeViewModel())
+            .environment(appStateVM)
+        
+        
+        let nStack = try sut.inspect().implicitAnyView().navigationStack()
+        XCTAssertEqual(nStack.count, 1)
+        
+        let scrollView = try sut.inspect().find(ViewType.ScrollView.self)
+        XCTAssertNoThrow(scrollView)
+        
+        
+        let forEach = try sut.inspect().find(ViewType.ForEach.self)
+        XCTAssertNoThrow(forEach)
+
+    }
+    
+    // CharacterDetailView UI
+    func testCharacterDetailView() throws {
+        @State var characterDetailViewModel = CharacterDetailViewModel(characterData: Results(id: 1, name: "3-D Man", description: "", thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", fileExtension: "jpg")))
+        XCTAssertNotNil(characterDetailViewModel)
+        
+        let sut = CharacterDetailView(viewModel: characterDetailViewModel)
+        
+        let scrollView = try sut.inspect().implicitAnyView().scrollView()
+        
+        let vStack = try scrollView.vStack()
+        XCTAssertEqual(vStack.count, 1)
+        
+    }
+    
+    // SingleSeriesView UI
+    
+    func testSingleSeriesView() throws {
+        @State var singleSeriesView = SingleSeriesView(singleSeriesData: ResultSeries(id: 01, title: "Captain America", description: "From German", thumbnail: ThumbnailSeries(path: "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/514a2ed3302f5", fileExtension: ".jpg")))
+        
+        XCTAssertNotNil(singleSeriesView)
+    }
+    
+    
+    
     
    
 }
