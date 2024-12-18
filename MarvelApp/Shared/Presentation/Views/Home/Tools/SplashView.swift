@@ -16,13 +16,6 @@ struct SplashView: View {
             Image(.splashView)
                 .resizable()
                 .ignoresSafeArea()
-                
-//            Image("")
-//                .resizable()
-//                .ignoresSafeArea()
-//                .background(Color.black).opacity(0.5)
-//            ProgressView()
-//                .progressViewStyle(CircularProgressViewStyle(tint: .white))
         }
         .onAppear {
             appState.statusApp()

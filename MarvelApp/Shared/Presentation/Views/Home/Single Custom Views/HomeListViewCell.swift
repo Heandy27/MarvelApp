@@ -23,8 +23,6 @@ struct HomeListViewCell: View {
                 ProgressView()
                     .frame(width: 150, height: 100)
             }
-            
-            
             Text(characterData.name)
                 .padding(.vertical, 5)
                 .foregroundStyle(.black)

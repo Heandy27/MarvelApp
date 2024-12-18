@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  MarvelApp
+
+  Created by Andy Heredia on 18/12/24.
+  
+*/
+"Loading..." = "Cargando...";
+"Search Character" = "Buscar Personaje";
+"Marvel Characters" = "Personajes de Marvel";
+"Has no description..." = "No tiene descripcion...";

@@ -51,21 +51,7 @@ final class XCTestPresentation: XCTestCase {
         XCTAssertEqual(getSeriesMock , 1)
         
     }
-    
-//    func testAppState() async throws {
-//        let viewModel = AppStateVM(characterUseCase: CharactersUseCaseMock())
-//        XCTAssertNotNil(viewModel)
-//        
-//        let expectation = self.expectation(description: "Get Characters")
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//            expectation.fulfill()
-//        }
-//        
-//        await(fulfillment(of: [expectation],timeout: 5))
-//        let viewModelGetCharacters = await viewModel.getCharacters()
-//        XCTAssertEqual(viewModelGetCharacters, 2)
-//        
-//    }
+
     
     // MARK: - Presentation UI
     // CharacterGridList UI

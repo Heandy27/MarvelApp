@@ -35,17 +35,14 @@ struct SingleSeriesView: View {
                     .font(.title2)
                     .foregroundStyle(.red)
                 
-                Text(singleSeriesData.description ?? "No tiene descripción...")
+                Text(singleSeriesData.description ?? "Has no description...")
                     .font(.title3)
                     .lineLimit(3)
                     .padding(.vertical, 1)
                 
             }
             .padding()
-            .foregroundStyle(Color.black)
-            
-            //.clipShape(RoundedRectangle(cornerRadius: 10))
-            
+            .foregroundStyle(Color.black) 
             
         }
         

@@ -37,13 +37,8 @@ struct ErrorView: View {
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding()
-
-                    
-                   
             }
-        }
-      
-        
+        } 
     }
 }
 
