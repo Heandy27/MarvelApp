@@ -8,12 +8,12 @@ final class CharactersNetwork: CharactersNetworkProtocol {
     func getCharacters() async -> [Results] {
         
         var charactersData: [Results] = []
-        
+        // Creamos la URL
         let urlString = "\(ConstantsApp.CONS_API_URL)\(Endpoints.characters.rawValue)?apikey=\(ConstantsApp.PUBLIC_KEY)&hash=\(ConstantsApp.HASH)&ts=\(ConstantsApp.TS)"
-        
+        // Solicitamos la URL
         var urlRequest = URLRequest(url: URL(string: urlString)!)
         urlRequest.httpMethod = HttpMethods.get
-        
+        // Recibimos los datos y decodificamos
         do {
             let (data, response) = try await URLSession.shared.data(for: urlRequest)
             guard let res = response as? HTTPURLResponse,
@@ -23,7 +23,7 @@ final class CharactersNetwork: CharactersNetworkProtocol {
             }
             
             let resultDecodable = try JSONDecoder().decode(CharactersModel.self, from: data)
-            
+            // Asignamos el array vacio al data recibido
             charactersData = resultDecodable.data.results
             
             
@@ -36,9 +36,9 @@ final class CharactersNetwork: CharactersNetworkProtocol {
     
     
 }
-// https://gateway.marvel.com/v1/public/characters?apikey=a0b03831ffd6e57548acd661a9ac42b5&hash=e8635e2a5aa1eecd943f510a6e6f9131&ts=1
 
 
+// Mock
 final class CharacterNetworkMock: CharactersNetworkProtocol {
     func getCharacters() async -> [Results] {
         

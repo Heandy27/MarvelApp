@@ -2,8 +2,10 @@ import Foundation
 
 @Observable
 final class HomeViewModel {
+    // Publicados
     var charactersData: [Results] = []
     var searchText: String = ""
+    // No publicados
     @ObservationIgnored
     private var useCase: CharactersUseCaseProtocol
     
@@ -15,7 +17,7 @@ final class HomeViewModel {
         
     }
     
-
+    // Filtrar al personaje
     var filteredCharacters : [Results] {
         if searchText.isEmpty {
             return charactersData
@@ -24,7 +26,7 @@ final class HomeViewModel {
             }
         }
     }
-    
+    // Recibimos los personajes
     @MainActor
     func getCharacters() async {
         let data = await useCase.getCharacters()

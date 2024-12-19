@@ -169,7 +169,6 @@
 		BFB9FB4B2D065CA300120946 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				BFB9FB522D065CF600120946 /* Local */,
 				BFB9FB512D065CE600120946 /* Repository */,
 				BFB9FB4F2D065CCA00120946 /* Network */,
 			);
@@ -195,13 +194,6 @@
 				BFB9FB532D065D1B00120946 /* Entities */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		BFB9FB4E2D065CBD00120946 /* KeyChain */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = KeyChain;
 			sourceTree = "<group>";
 		};
 		BFB9FB4F2D065CCA00120946 /* Network */ = {
@@ -231,14 +223,6 @@
 				BFB9FB682D066AC100120946 /* CharacterRepository.swift */,
 			);
 			path = Repository;
-			sourceTree = "<group>";
-		};
-		BFB9FB522D065CF600120946 /* Local */ = {
-			isa = PBXGroup;
-			children = (
-				BFB9FB4E2D065CBD00120946 /* KeyChain */,
-			);
-			path = Local;
 			sourceTree = "<group>";
 		};
 		BFB9FB532D065D1B00120946 /* Entities */ = {

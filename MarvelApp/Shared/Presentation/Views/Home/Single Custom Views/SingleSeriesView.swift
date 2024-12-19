@@ -1,10 +1,3 @@
-//
-//  SingleSeriesView.swift
-//  MarvelApp
-//
-//  Created by Andy Heredia on 15/12/24.
-//
-
 import SwiftUI
 
 struct SingleSeriesView: View {
@@ -12,7 +5,7 @@ struct SingleSeriesView: View {
     var singleSeriesData: ResultSeries
     
     var body: some View {
-        
+    
         VStack {
             AsyncImage(url: URL(string: "\(singleSeriesData.thumbnail.path).jpg")) { image in
                 image.resizable()
@@ -23,14 +16,12 @@ struct SingleSeriesView: View {
                         Circle()
                             .stroke(Color.red, lineWidth: 10)
                     }
-                
             } placeholder: {
                 ProgressView()
                     .frame(width: 150, height: 100)
             }
             
             VStack {
-                
                 Text(singleSeriesData.title)
                     .font(.title2)
                     .foregroundStyle(.red)
@@ -39,21 +30,16 @@ struct SingleSeriesView: View {
                     .font(.title3)
                     .lineLimit(3)
                     .padding(.vertical, 1)
-                
             }
             .padding()
             .foregroundStyle(Color.black) 
             
         }
-        
         .padding()
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .frame(width: 300, height: 370)
-        /*.frame(minWidth: 350, idealWidth: 350, maxWidth: .infinity, minHeight: 400, idealHeight: 400, maxHeight: 400, alignment: .center)*/
         .shadow(radius: 6, x: 5, y: 5)
-       
-        
     }
        
 }

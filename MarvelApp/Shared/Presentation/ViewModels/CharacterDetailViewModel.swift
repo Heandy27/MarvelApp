@@ -17,13 +17,13 @@ final class CharacterDetailViewModel {
             await getSeries(id: characterData.id)
         }
     }
-    
+    // Recibimos el personaje mediante el id.
     @MainActor
     func getSeries(id: Int) async  {
         let data = await useCase.getSeries(id: id)
         seriesData = data
     }
-    
+    // Mock
     func getSeriesMock(id: Int) async -> Int {
         return 1
     }

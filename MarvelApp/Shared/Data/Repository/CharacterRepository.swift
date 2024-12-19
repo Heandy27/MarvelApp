@@ -15,7 +15,7 @@ final class CharacterRepository: CharacterRepositoryProtocol {
     }
 }
 
-
+// Mock
 final class CharacterRepositoryMock: CharacterRepositoryProtocol {
     
     private var network: CharactersNetworkProtocol
