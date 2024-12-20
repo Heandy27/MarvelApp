@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct CharacterGridList: View {
 
     @State private var viewModel: HomeViewModel
+    
+    private var welcomeTip = WelcomeTip()
     
     @Environment(AppStateVM.self) var appState
     
@@ -24,6 +27,7 @@ struct CharacterGridList: View {
     
     var body: some View {
         NavigationStack {
+            TipView(welcomeTip)
             ScrollView(.vertical) {
                 LazyVGrid(columns: gridItem, spacing: 30) {
                     ForEach(viewModel.filteredCharacters) {character in
@@ -32,17 +36,13 @@ struct CharacterGridList: View {
                         } label: {
                                 HomeListViewCell(characterData: character)
                         }
-                        
-                        
-                    }
-                    
-                    
+                    }     
                 }
                 
             }
             .searchable(text: $viewModel.searchText, prompt: "Search Character")
             .navigationTitle("Marvel Characters")
-            .id(1)
+           
                 
             
         }
