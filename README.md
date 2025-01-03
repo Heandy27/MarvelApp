@@ -22,6 +22,7 @@ puedes explorar una lista de personajes y descubrir las series en las que han pa
 - **Async/Await:** Uso de async/await para realizar solicitudes a la API de manera eficiente.
 - **Swift Packages:** Uso de ViewInspector para testear nuestras vistas y sub-vistas.
 - **TipKit:** Implementación de TipKit para proporcionar consejos útiles al usuario de manera dinámica dentro de la aplicación.
+- **RootView:** Uso de estados en la aplicación para el manejo de errores.
 
 ## Tecnologías
 
