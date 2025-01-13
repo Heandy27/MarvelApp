@@ -1,7 +1,6 @@
 # Marvel App
 
-Marvel App es una aplicación desarrollada en SwiftUI que utiliza la API REST pública de Marvel para mostrar información detallada del universo Marvel. Con ella, 
-puedes explorar una lista de personajes y descubrir las series en las que han participado.
+Marvel App is an application developed in SwiftUI that uses the public Marvel REST API to display detailed information about the Marvel universe. With it, you can explore a list of characters and discover the series they have participated in.
 
 <div style="display: flex; justify-content: center; align-items: center;">
 <img src="https://i.postimg.cc/85T0MGRh/home.png" alt="home view" width="250">
@@ -12,19 +11,21 @@ puedes explorar una lista de personajes y descubrir las series en las que han pa
 <img src="https://i.postimg.cc/FHJ8QDFJ/errorview.png" alt="Descripción de la imagen" width="250">
 </div>
 
-## Características
+## Features
 
-- **Grid:** Organiza vistas de manera ordenada en filas y columnas.
-- **API REST:** La aplicación interactúa con una API REST para obtener información sobre los personajes y sus series.
-- **Testing:** El proyecto incluye pruebas unitarias y de integración para asegurar la correcta funcionalidad de las principales características.
-- **MVVM:** Se ha utilizado el patrón de diseño MVVM para organizar el código, separando la lógica de negocio (Model), la representación de la interfaz de usuario (View) y el manejo de los datos (ViewModel).
-- **Combine:** Implementación de Combine para manejar la reactividad de los datos.
-- **Async/Await:** Uso de async/await para realizar solicitudes a la API de manera eficiente.
-- **Swift Packages:** Uso de ViewInspector para testear nuestras vistas y sub-vistas.
-- **TipKit:** Implementación de TipKit para proporcionar consejos útiles al usuario de manera dinámica dentro de la aplicación.
-- **RootView:** Uso de estados en la aplicación para el manejo de errores.
+- **Grid:** Organizes views in an orderly manner into rows and columns.
+- **API REST:** The app interacts with a REST API to fetch information about characters and their series.
+- **Testing:** The project includes unit and integration tests to ensure the correct functionality of key features.
+- **MVVM:** The MVVM design pattern is used to organize the code, separating business logic (Model), user interface representation (View), and data handling (ViewModel).
+- **Combine:** Implementation of Combine to handle data reactivity.
+- **Async/Await:** Usage of async/await to make API requests efficiently.
+- **Swift Packages:** Usage of ViewInspector to test views and subviews.
+- **TipKit:** Implementation of TipKit to provide dynamic user tips within the app.
+- **RootView:** Usage of states in the app to handle errors.
 
-## Tecnologías
+
+
+## Technologies
 
 - SwiftUI
 - Xcode
@@ -37,51 +38,51 @@ puedes explorar una lista de personajes y descubrir las series en las que han pa
 - Swift Packages
 - TipKit
 
-## Instalación
+## Installation
 
-1. Clona este repositorio:
+1. Clone this repository:
    ```bash
    https://github.com/Heandy27/MarvelApp.git
    ```
-2. Abre el proyecto en Xcode.
-3. Ejecuta el proyecto en un simulador o dispositivo físico.
+2. Open the project in Xcode.
+3. Run the project on a simulator or physical device.
 
-## Uso
+## Usage
 
-### Listado de personajes:
-Al iniciar la aplicación, podrás ver una lista de personajes de Marvel.
+### Character List:
+When the app starts, you will see a list of Marvel characters.
 
-### Información de personajes:
-Selecciona un personaje para ver información sobre las series en las que ha participado.
+### Character Information:
+Select a character to see information about the series they have participated in.
 
-## Configuración
+## Configuration
 
-- Si al iniciar la aplicación no aparece ningún héroe en el listado, asegúrate de configurar los parámetros `hash`, `ts` y `apikey` en el archivo **NetworkHeroes.swift**.
-- Si al hacer tap en un héroe no aparece información sobre las series en las que participó, también debes configurar estos parámetros en el archivo **NetworkSeries.swift**.
+- If no heroes appear in the list when starting the app, make sure to configure the `hash`, `ts` and `apikey` parameters in the **NetworkHeroes.swift** file.
+- If no information about the series appears when tapping on a hero, you also need to configure these parameters in the **NetworkSeries.swift** file.
 
-**Nota:** Los valores de `hash`, `ts` y `apikey` se encuentran en el archivo **ConstantsApp.swift** del proyecto.
+**Note:** The values for `hash`, `ts` and `apikey` can be found in the ConstantsApp.swift file of the project.
 
-### Ejemplos:
+### Examples:
 
-**Configuración en CharactersNetwork.swift:**
+**Configuration in CharactersNetwork.swift:**
 ```swift
 let urlString = "\(ConstantsApp.CONS_API_URL)\(Endpoints.characters.rawValue)?apikey=\(ConstantsApp.PUBLIC_KEY)&hash=\(ConstantsApp.HASH)&ts=\(ConstantsApp.TS)"
 ```
 
-**Configuración en SeriesNetwork.swift:**
+**Configuration in SeriesNetwork.swift:**
 ```swift
 let urlString = "\(ConstantsApp.CONS_API_URL)\(Endpoints.characters.rawValue)/\(id)/series?apikey=\(ConstantsApp.PUBLIC_KEY)&hash=\(ConstantsApp.HASH)&ts=\(ConstantsApp.TS)"
 ```
 
-## Pruebas
+## Tests
 
-Para ejecutar las pruebas del proyecto, sigue estos pasos:
+To run the project tests, follow these steps:
 
-1. Abre el proyecto en Xcode.
-2. Presiona `Cmd + U` para ejecutar las pruebas.
+1. Open the project in Xcode.
+2. Press `Cmd + U` to run the tests.
 
 <hr></hr>
-Gracias por revisar mi app. Si quieres saber más sobre mí o mi trabajo, puedes encontrarme en estas redes social:<br></br>
+Thank you for reviewing my app. If you want to know more about me or my work, you can find me on these social networks:<br></br>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/heandy27/) 
 [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)](https://github.com/Heandy27)
